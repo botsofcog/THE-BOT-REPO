@@ -130,7 +130,7 @@ const Stake: NextPage = () => {
                   contractAddress={stakingContractAddress}
                   action={() => stakeNft(nft.metadata.id)}
                 >
-                  Upload to REPO | 'STAKE'
+                  Upload to REPO
                 </Web3Button>
               </div>
             ))}
