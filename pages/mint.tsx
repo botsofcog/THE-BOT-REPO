@@ -29,7 +29,7 @@ const Mint: NextPage = () => {
           alert(error);
         }}
       >
-        MINT COG BOT
+        MINT A COG BOT
       </Web3Button>
     </div>
   );

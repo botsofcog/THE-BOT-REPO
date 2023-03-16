@@ -117,7 +117,7 @@ const Stake: NextPage = () => {
           </div>
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2>BOTS IN WALLETT</h2>
+          <h2>BOTS IN WALLET</h2>
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>

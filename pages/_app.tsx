@@ -1,13 +1,13 @@
 import type { AppProps } from "next/app";
-import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { Mumbai } from "@thirdweb-dev/chains";
 import "../styles/globals.css";
-
-// This is the chainId your dApp will work on.
-const activeChainId = ChainId.Polygon;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider desiredChainId={activeChainId}>
+    <ThirdwebProvider
+      activeChain={137}
+    >
       <Component {...pageProps} />
     </ThirdwebProvider>
   );
