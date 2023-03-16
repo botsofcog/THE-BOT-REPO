@@ -6,11 +6,12 @@
   justify-content: center;
   width: 100%;
   position: absolute;
-  padding: 0 24px;
+  padding: 10 24px;
 }
 
 .h1 {
-  margin-bottom: 0px;
+  margin-bottom: 100px;
+  font-size: 5rem;
 }
 
 .explain {
@@ -19,9 +20,9 @@
 }
 
 .divider {
-  width: 50%;
-  border-color: grey;
-  opacity: 0.25;
+  width: 100%;
+  border-color: rgb(86, 123, 172);
+  opacity: 0.5;
 }
 
 .smallDivider {
@@ -45,16 +46,18 @@
 
 .nftBox {
   border-radius: 16px;
-  border: 1px solid #ccc;
-  width: 19%;
+  border: 2px solid #3eb2ff;
+  
+  width: 30%;
   min-height: 200px;
-  padding: 16px;
+  margin-bottom: 2%;
+  padding: 25px;
 }
 
 .optionSelectBox {
   border-radius: 16px;
-  border: 1px solid #ccc;
-  width: 48%;
+  border: 1px solid #fd9800;
+  width: 60%;
   min-height: 200px;
   height: 100%;
   display: flex;
@@ -63,7 +66,7 @@
   justify-content: center;
   padding-left: 12px;
   padding-right: 12px;
-  cursor: pointer;
+  cursor: move;
 }
 
 .selectBoxTitle {
@@ -73,7 +76,7 @@
 }
 
 .selectBoxDescription {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(255, 166, 0);
   margin-top: 0px;
 }
 
@@ -106,8 +109,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1%;
-  width: 1600px;
+  gap: 2%;
+  width: 1200px;
   max-width: 95vw;
   flex-wrap: wrap;
   margin: 16px 0;
@@ -115,30 +118,33 @@
 
 .tokenItem {
   width: 35%;
-  height: 120px;
+  height: 125px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  gap: 16px;
+  border: 1px solid rgba(0, 153, 255, 0.4);
+  gap: 5px;
 }
 
 .tokenLabel {
   margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 05px;
+  font-weight: 900;
+  color: rgba(250, 162, 0, 0.7);
+  
 }
 
 /* Second tokenLabel item */
 
 .tokenValue {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-top: 8px;
   margin-bottom: 0px;
   font-weight: 500;
+  color: rgb(46, 119, 255);
+
 }
 
 /* On Mobile, make tokenGrid 100% width */
