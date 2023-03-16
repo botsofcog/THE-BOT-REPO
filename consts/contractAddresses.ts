@@ -4,5 +4,3 @@ export const tokenContractAddress =
   "0xd82f89a16Bf2dECc0d6cb96CA12F1306fb623D42";
 export const stakingContractAddress =
   "0x6D067520526807E7A61BAC740E6D66BB62d05332";
-export const newnftDropContractAddress =
-  "0x4C99943673632276332fedD4F9a3Fb528f4f2F03";
