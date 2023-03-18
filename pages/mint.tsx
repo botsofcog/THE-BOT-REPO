@@ -18,7 +18,6 @@ const Mint: NextPage = () => {
 
       <Web3Button
         colorMode="dark"
-        accentColor="#5204BF"
         contractAddress="0x1BBCa92FC889Af891e3B666aee7Cb3534B83d7B7"
         action={(contract) => {contract.call("mint", 1)}}
         onSuccess={() => {

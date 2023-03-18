@@ -11,17 +11,6 @@ const Home: NextPage = () => {
       {/* Top Section */}
       <h1 className={styles.h1}>THE BOTS OF COG REPO</h1>
       <div className={styles.nftBoxGrid}>
-        <div
-          className={styles.optionSelectBox}
-          role="button"
-          onClick={() => router.push(`/mint`)}
-        >
-          {/* Mint a new NFT */}
-          <Image src="/icons/drop.webp" alt="drop" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>MINT A GEN2 COG BOT</h2>
-          <p className={styles.selectBoxDescription}>
-          </p>
-        </div>
 
         <div
           className={styles.optionSelectBox}
@@ -30,10 +19,23 @@ const Home: NextPage = () => {
         >
           {/* Staking an NFT */}
           <Image src="/icons/token.webp" alt="token" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>Stake Your COG Bots</h2>
+          <h2 className={styles.selectBoxTitle}>STAKE YOUR COG BOTS</h2>
           <p className={styles.selectBoxDescription}>
           </p>
         </div>
+
+         <div
+          className={styles.optionSelectBox}
+          role="button"
+          onClick={() => router.push(`/vote`)}
+        >
+          {/* VOTE */}
+          <Image src="/icons/drop.webp" alt="vote" width={64} height={64} />
+          <h2 className={styles.selectBoxTitle}>VOTE</h2>
+          <p className={styles.selectBoxDescription}>
+          </p>
+        </div>
+
       </div>
     </div>
   );
