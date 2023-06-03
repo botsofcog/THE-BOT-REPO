@@ -17,12 +17,16 @@ body {
 
 button {
   text-rendering: optimizeSpeed;
-  min-height:60px;
+  min-height:40px;
+  min-width:75px;
   max-height: 100px;
   font-size: 5rem;
+  border-radius: 0.3rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-basis: 45%;
+  display: inline-block;
 }
-
-
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -51,4 +55,3 @@ body {
 h2 {
   font-size: 2.5rem;
 }
-
