@@ -1,7 +1,8 @@
 import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { Mumbai } from "@thirdweb-dev/chains";
+import { Polygon } from "@thirdweb-dev/chains";
 import "../styles/globals.css";
+import { ThirdwebNftMedia, useContract, useNFTs, useContractMetadata } from "@thirdweb-dev/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
