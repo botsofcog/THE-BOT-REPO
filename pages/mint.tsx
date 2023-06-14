@@ -11,6 +11,8 @@ const Mint: NextPage = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.h1}>MINT A BOTS OF COG GEN2</h1>
+      CONTRACT ADDRESS:<a href="https://polygonscan.com/address/0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7">0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7</a>
+      <br></br>
       <div className={styles.optionSelectBox2}><Image src="/preview.gif" alt="preview" width={400} height={400} /></div>
       <p>
         Early Access @10 $Matic - Public @15 $Matic
@@ -25,6 +27,7 @@ const Mint: NextPage = () => {
       <p className={styles.explain}>
         Connect Your Wallet Above To Claim Your <b>BOTS OF COG</b> Generation 2 Series Robot.
       </p>
+
       <a href="https://www.botsofcog.io"> - BACK TO BOTS OF COG HOMEPAGE - </a> <a href="https://twitter.com/botsofcog">- BoC Twitter -</a>
     </div>
   );
