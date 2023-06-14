@@ -36,6 +36,18 @@ const Home: NextPage = () => {
           </p>
         </div>
 
+        <div
+          className={styles.optionSelectBox}
+          role="button"
+          onClick={() => router.push(`/mint`)}
+        >
+          {/* MINT */}
+          <Image src="/icons/mint.webp" alt="mint" width={64} height={64} />
+          <h2 className={styles.selectBoxTitle}>MINT</h2>
+          <p className={styles.selectBoxDescription}>
+          </p>
+        </div>
+
       </div>
     </div>
   );
