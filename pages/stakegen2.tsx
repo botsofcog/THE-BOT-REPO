@@ -11,13 +11,14 @@ import {
 import { BigNumber, ethers } from "ethers";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import NFTCard from "../components/NFTCard";
+import Gen2NFTCard from "../components/Gen2NFTCard";
 import {
-  nftDropContractAddress,
-  stakingContractAddress,
+  gen2DropContractAddress,
+  gen2StakingContractAddress,
   tokenContractAddress,
 } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
+import { nftDropContractAddress } from "../consts/contractAddresses";
 
 // Import dependencies for pop-up notifications
 import { toast, ToastContainer } from "react-toastify";
@@ -26,7 +27,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Stake: NextPage = () => {
   const address = useAddress();
   const { contract: nftDropContract } = useContract(
-    nftDropContractAddress,
+    gen2DropContractAddress,
     "nft-drop"
   );
   const { contract: tokenContract } = useContract(
@@ -34,7 +35,7 @@ const Stake: NextPage = () => {
     "token"
   );
   const { contract: stakingContract, isLoading: isStakingContractLoading } = useContract(
-    stakingContractAddress,
+    gen2StakingContractAddress,
     "staking"
   );
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
@@ -76,10 +77,10 @@ const Stake: NextPage = () => {
 
     const isApproved = await nftDropContract?.isApproved(
       address,
-      stakingContractAddress
+      gen2StakingContractAddress
     );
     if (!isApproved) {
-      await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
+      await nftDropContract?.setApprovalForAll(gen2StakingContractAddress, true);
     }
 
     // Show loading notification
@@ -164,7 +165,9 @@ const Stake: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={`${styles.h1} ${styles.redBackground}`}>- BOTS OF COG GEN1 REPO -</h1>
+<h1 className={`${styles.h1} ${styles.redText} ${styles.darkPurpleBackground}`}>
+  - BOTS OF COG GEN2 REPO -
+</h1>
       <div className={styles.tokenItem}>
         <h3 className={`${styles.tokenLabel} ${styles.blueText}`}>Total COGz In Vault:</h3>
         <p className={styles.tokenValue}>{cogzRemaining ?? "Loading..."}</p>
@@ -201,16 +204,16 @@ const Stake: NextPage = () => {
 
           <Web3Button
             action={() => claimRewards()}
-            contractAddress={stakingContractAddress}
+            contractAddress={gen2StakingContractAddress}
           >
             Claim Earned COGz Coin
           </Web3Button>
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2>YOUR GEN1 REPOSITORY</h2>
+          <h2>YOUR GEN2 REPOSITORY</h2>
           <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel}>
-              Total GEN1 Bots Uploaded:
+              Total GEN2 Bots Uploaded:
               <p className={styles.tokenValue}> {stakedTokens && stakedTokens[0]?.length}</p>
               {stakedTokens && stakedTokens[0]?.length > 0 && (
                 <span className={styles.blueText}></span>
@@ -219,23 +222,22 @@ const Stake: NextPage = () => {
           </div>
           <Web3Button
             action={() => unstakeAll()}
-            contractAddress={stakingContractAddress}
+            contractAddress={gen2StakingContractAddress}
           >
-            Download ALL GEN1 Bots to Account*
+            Download ALL GEN2 Bots to Account*
           </Web3Button>
           <p>*[Combines Multiple Wallet Withdrawals Into A Single Transaction.]<br></br>[You Will Still Have to Approve Each Staked Bot!]</p>
           <div className={styles.nftBoxGrid}>
-            {stakedTokens &&
-              stakedTokens[0]?.map((stakedToken: BigNumber) => (
-                <NFTCard
-                  tokenId={stakedToken.toNumber()}
-                  key={stakedToken.toString()}
-                />
-              ))}
-          </div>
-
+  {stakedTokens &&
+    stakedTokens[0]?.map((stakedToken: BigNumber) => (
+      <Gen2NFTCard
+        tokenId={stakedToken.toNumber()}
+        key={stakedToken.toString()}
+      />
+    ))}
+</div>
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2>GEN1 BOTS IN WALLET</h2>
+          <h2>GEN2 BOTS IN WALLET</h2>
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -245,7 +247,7 @@ const Stake: NextPage = () => {
                 />
                 <h3>{nft.metadata.name}</h3>
                 <Web3Button
-                  contractAddress={stakingContractAddress}
+                  contractAddress={gen2StakingContractAddress}
                   action={() => stakeNft(nft.metadata.id)}
                 >
                   Upload to REPO
