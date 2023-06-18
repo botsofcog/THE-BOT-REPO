@@ -322,3 +322,48 @@
   margin-left: 10px;
   padding: 20px;
 }
+
+.iframeContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive resizing */
+  overflow: hidden;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.goldBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 100%; /* Adjust the aspect ratio as desired */
+  background-color: gold;
+}
+
+.goldBox > :global(img) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.redText {
+  color: rgb(116, 0, 0);
+}
+
+.darkPurpleBackground {
+  background-color: rgba(85, 1, 134, 0.281);
+}
+
+.redBackground {
+  background-color: rgba(19, 48, 75, 0.63);
+}
