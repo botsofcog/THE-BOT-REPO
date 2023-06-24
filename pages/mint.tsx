@@ -23,7 +23,7 @@ const Mint: NextPage = () => {
         </div>
       </div>
       <p>
-        Early Access JULY 14-21 2023 @10 $Matic - JULY 21 2023 Public @15 $Matic
+        MINT A GEN2 @15 $Matic
       </p>
       <hr className={`${styles.smallDivider} ${styles.detailPageHr}`} />
       <div className={styles.iframeContainer}>
