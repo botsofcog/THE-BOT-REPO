@@ -12,20 +12,18 @@ const Home: NextPage = () => {
       <h1 className={styles.h1}>THE BOTS OF COG REPO</h1>
       <div className={styles.nftBoxGrid}>
 
-        <div
+      <div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => router.push(`/stake`)}
+          onClick={() => router.push(`/mint`)}
         >
-          {/* Staking GEN1 */}
-          <Image src="/icons/token.webp" alt="token" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>GEN-1 BOT STAKING</h2>
+          {/* MINT */}
+          <Image src="/icons/mint.webp" alt="mint" width={64} height={64} />
+          <h2 className={styles.selectBoxTitle}>GEN-2 MINT</h2>
           <p className={styles.selectBoxDescription}>
-          {"Stake Your Gen 1 Bots For COGz Tokens."}
+          {"Mint A GEN-2 BOT; Repurposed Robots Taken From COG Corp Factories."}
           </p>
         </div>
-
-
 
         <div
   className={styles.optionSelectBox}
@@ -40,20 +38,19 @@ const Home: NextPage = () => {
   </p>
 </div>
 
-
-
-        <div
+<div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => router.push(`/mint`)}
+          onClick={() => router.push(`/stake`)}
         >
-          {/* MINT */}
-          <Image src="/icons/mint.webp" alt="mint" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>GEN-2 MINT</h2>
+          {/* Staking GEN1 */}
+          <Image src="/icons/token.webp" alt="token" width={64} height={64} />
+          <h2 className={styles.selectBoxTitle}>GEN-1 BOT STAKING</h2>
           <p className={styles.selectBoxDescription}>
-          {"Mint A GEN-2 BOT; Repurposed Robots Taken From COG Corp Factories."}
+          {"Stake Your Gen 1 Bots For COGz Tokens."}
           </p>
         </div>
+
      <div
           className={styles.optionSelectBox}
           role="button"
