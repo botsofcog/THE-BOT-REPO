@@ -6,8 +6,9 @@ import { ThirdwebNftMedia, useContract, useNFTs, useContractMetadata } from "@th
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider
-      activeChain={137}
+    <ThirdwebProvider 
+      activeChain="polygon" 
+      clientId="09bddeb436c778006bbfb6c89c8bf588" // You can get a client id from dashboard settings
     >
       <Component {...pageProps} />
     </ThirdwebProvider>

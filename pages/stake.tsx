@@ -1,5 +1,4 @@
 import {
-  ConnectWallet,
   ThirdwebNftMedia,
   useAddress,
   useContract,
@@ -18,7 +17,7 @@ import {
   tokenContractAddress,
 } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
-
+import { ThirdwebProvider, ConnectWallet } from "@thirdweb-dev/react";
 // Import dependencies for pop-up notifications
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,11 +39,7 @@ const Stake: NextPage = () => {
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
-  const { data: stakedTokens } = useContractRead(
-    stakingContract,
-    "getStakeInfo",
-    address
-  );
+  const { data: stakedTokens, isLoading: isStakedTokensLoading } = useContractRead(stakingContract, "getStakeInfo", [address]);
   const [cogzRemaining, setCogzRemaining] = useState<string | undefined>();
   const [stakedBotIds, setStakedBotIds] = useState<number[]>([]);
 
@@ -52,14 +47,14 @@ const Stake: NextPage = () => {
     if (!stakingContract || !address) return;
 
     async function loadClaimableRewards() {
-      const stakeInfo = await stakingContract?.call("getStakeInfo", address);
+      const stakeInfo = await stakingContract?.call("getStakeInfo", [address]);
       setClaimableRewards(stakeInfo[1]);
       setStakedBotIds(stakeInfo[0]);
     }
 
     async function loadCogzRemaining() {
       try {
-        const cogzRemaining = await stakingContract?.call("getRewardTokenBalance");
+        const cogzRemaining = await stakingContract?.call("getRewardTokenBalance", []);
         setCogzRemaining(ethers.utils.formatUnits(cogzRemaining, 18));
       } catch (error) {
         console.error("Failed to load cogz remaining:", error);
