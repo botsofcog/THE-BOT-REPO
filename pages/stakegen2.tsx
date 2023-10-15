@@ -23,9 +23,17 @@ import { nftDropContractAddress } from "../consts/contractAddresses";
 // Import dependencies for pop-up notifications
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  IoExitOutline,
+  IoCheckmarkOutline,
+  IoCheckmarkCircleOutline,
+  IoArrowBackOutline,
+} from "react-icons/io5";
+import { useRouter } from "next/router";
 
 const Stake: NextPage = () => {
   const address = useAddress();
+  const router = useRouter();
   const { contract: nftDropContract } = useContract(
     gen2DropContractAddress,
     "nft-drop"
@@ -164,6 +172,8 @@ const Stake: NextPage = () => {
 <h1 className={`${styles.h1} ${styles.redText} ${styles.darkPurpleBackground}`}>
   - BOTS OF COG GEN2 REPO -
 </h1>
+<button onClick={router.back} className={styles.backArrow}>
+            <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" /></button><br></br>
       <div className={styles.tokenItem}>
         <h3 className={`${styles.tokenLabel} ${styles.blueText}`}>Total COGz In Vault:</h3>
         <p className={styles.tokenValue}>{cogzRemaining ?? "Loading..."}</p>
