@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <ThirdwebProvider 
-        supportedWallets={[coinbaseWallet(), metamaskWallet({ recommended: true }), rainbowWallet(), walletConnect(), localWallet(), trustWallet(), magicLink({
+        supportedWallets={[coinbaseWallet(), metamaskWallet(), rainbowWallet(), walletConnect(), localWallet(), trustWallet(), magicLink({
           apiKey: "pk_live_FC80B0402A25F2BD",
         }),]}
         activeChain="polygon" 

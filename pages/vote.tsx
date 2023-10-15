@@ -378,7 +378,7 @@ export default function Home() {
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" />
           </button>
           <p><b>Currently Held Robots</b> <br></br>
-            <center>Gen-1 : {balance1} Bots <br></br> Gen-2 : {balance2} Bots</center>
+            Gen-1 : {balance1} Bots <br></br> Gen-2 : {balance2} Bots
           </p>
         </div>
         <h1 style={{ wordWrap: "break-word", color: "#64b4ff" }}>"The Signal" <br></br> Vote on The Story So Far...</h1>
