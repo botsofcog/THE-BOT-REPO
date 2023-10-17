@@ -10,6 +10,8 @@ import {
   useSDK,
   ThirdwebProvider,
   useNFTBalance,
+  useTokenBalance,
+  useBalance,
 } from "@thirdweb-dev/react";
 import { useQuery, gql, useLazyQuery } from "@apollo/client";
 import GetProposalInfo from "../components/GetProposalInfo";
@@ -26,7 +28,12 @@ import Loading from "../components/Loading";
 import { SNAPSHOT_SPACE } from "../consts/snapshot";
 import ReactMarkdown from 'react-markdown'
 import Image from "next/image";
-
+import { Token } from "graphql";
+import {
+  nftDropContractAddress,
+  stakingContractAddress,
+  tokenContractAddress,
+} from "../consts/contractAddresses";
 interface Proposal {
   id: number;
   title: string;
@@ -100,8 +107,12 @@ export default function Home() {
   const client = new snapshot.Client712(hub);
   const router = useRouter();
   const address = useAddress();
-
+  const { contract: tokenContract } = useContract(
+    tokenContractAddress,
+    "token"
+  );
   const sdk = useSDK();
+  const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const web3 = sdk?.getSigner()?.provider;
 
   const contract1 = useContract(contractAddress1);
@@ -377,16 +388,22 @@ export default function Home() {
           <button onClick={router.back} className={styles.backArrow}>
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" />
           </button>
-          <p><b>Currently Held Robots</b> <br></br>
-            Gen-1 : {balance1} Bots <br></br> Gen-2 : {balance2} Bots
+          <p><b>Bots in Account</b> <br></br>
+            <i>Gen-1 : {balance1} <br></br> Gen-2 : {balance2}</i>
+            <br></br>
+            <br></br>
+            <b>COGz in Account</b><br></br>
+            <p>
+                <i>{tokenBalance?.displayValue}</i> {tokenBalance?.symbol}
+              </p>
           </p>
         </div>
         <h1 style={{ wordWrap: "break-word", color: "#64b4ff" }}>"The Signal" <br></br> Vote on The Story So Far...</h1>
-
+<p><h4>* Users Must Have At Least One(1) Bot Unstaked To Verify Their Vote.<br></br> <i>(COG Bots Cannot Mine COGz & Verify Votes At the Same Time)</i> <br></br>
+<br></br>* Voting Does Not Permanently "Spend" Users COGz.<br></br> Make Sure To Withrdraw Any Mined COGz Before Voting! <i> (The Quantity of COGz Held Equals Your Current Voting Power) </i></h4><br></br>Happy Voting!</p><br></br>
           <ConnectWallet />
           {balance1 == 0 && balance2 == 0 && (
-            <h3>
-              Please Connect Your Wallet. <br></br> You must hold either a&nbsp;
+            <h3>You must hold either a&nbsp;
               <a
                 href={"https://opensea.io/collection/botsofcog"}
                 target="_blank"
@@ -402,7 +419,7 @@ export default function Home() {
               >
                 Gen2
               </a>
-              &nbsp;'Bots Of COG' NFT In Order To Vote.
+              &nbsp;'Bots Of COG' NFT <u>In Your Wallet</u>, In Order To Vote. <br></br><i>(Please Unstake A Minimum of 1 Bot)</i>
             </h3>
           )}
 
