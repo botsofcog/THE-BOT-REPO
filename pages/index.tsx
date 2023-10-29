@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         <div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => router.push(`/stakegen2`)}
+          onClick={() => router.push("/stakegen2")}
         >
           {/* Staking GEN2 */}
           <Image src="/icons/token2.webp" alt="token2" width={64} height={64} />
