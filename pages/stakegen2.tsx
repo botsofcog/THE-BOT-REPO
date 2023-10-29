@@ -241,6 +241,15 @@ const Stake: NextPage = () => {
 </div>
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>GEN2 BOTS IN WALLET</h2>
+{/*           <Web3Button
+      contractAddress="0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7"
+      action={(contract) => {
+        contract.call("setApprovalForAll", [gen2stakingContractAddress, true])
+      }}
+    >
+      Set Approval For All GEN-2 Bots
+
+    </Web3Button> */}
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>

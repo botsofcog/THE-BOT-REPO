@@ -31,7 +31,7 @@ import {
 import { useRouter } from "next/router";
 const NFT_CONTRACT_ADDRESS = "0x1BBCa92FC889Af891e3B666aee7Cb3534B83d7B7";
 const STAKING_CONTRACT_ADDRESS = "0x6D067520526807E7A61BAC740E6D66BB62d05332";
-const activeChain = Polygon;
+const activeChain = { Polygon } ;
 const Stake: NextPage = () => {
   const address = useAddress();
   const router = useRouter();
@@ -44,8 +44,8 @@ const Stake: NextPage = () => {
     "token"
   );
   const { contract: stakingContract, isLoading: isStakingContractLoading } = useContract(
-    stakingContractAddress,
-    "staking"
+    stakingContractAddress
+
   );
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
@@ -81,16 +81,43 @@ const Stake: NextPage = () => {
 
   async function stakeNft(id: string) {
     if (!address) return;
-
+  
     const isApproved = await nftDropContract?.isApproved(
       address,
       stakingContractAddress
     );
+    console.log("isApproved:", isApproved);  // Added console.log
+  
     if (!isApproved) {
       await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
     }
-    await stakingContract?.call("stake", [[id]]);
+  
+    // Show loading notification
+    const notification = toast.info("Staking NFT...", { autoClose: false });
+  
+    try {
+      const tx = await stakingContract?.call("stake", [id]);
+  
+      if (tx) {
+        await tx.wait();
+  
+        // Show success notification
+        toast.success("NFT staked successfully!");
+      } else {
+        // Show error notification for canceled or rejected transaction
+        toast.error("Failed to stake NFT.");
+        console.error("Error", Error);
+      }
+    } catch (error) {
+      // Show error notification for other errors
+      toast.error("Failed to stake NFT.");
+    }
+  
+    // Hide loading notification
+    toast.dismiss(notification);
   }
+  
+
   
   
 
@@ -222,7 +249,17 @@ const Stake: NextPage = () => {
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>GEN1 BOTS IN WALLET</h2>
+          <Web3Button
+      contractAddress="0x1BBCa92FC889Af891e3B666aee7Cb3534B83d7B7"
+      action={(contract) => {
+        contract.call("setApprovalForAll", [stakingContractAddress, true])
+      }}
+    >
+      Set Approval For All GEN-1 Bots
 
+    </Web3Button>
+    <br></br>
+<b><p>Please Confirm Your Gen-1 has Approval Before Uploading</p></b>
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -232,7 +269,16 @@ const Stake: NextPage = () => {
                 />
                 <h3>{nft.metadata.name}</h3>
                 
-
+{/* <Web3Button
+      contractAddress="0x1BBCa92FC889Af891e3B666aee7Cb3534B83d7B7"
+      action={(contract) => {
+        contract.call("approve", [stakingContractAddress, nft.metadata.id])
+      }}
+    >
+      Approve For Upload
+    </Web3Button>
+    <br></br>
+<br></br> */}
     <Web3Button
       contractAddress="0x6D067520526807E7A61BAC740E6D66BB62d05332"
       action={(contract) => {
@@ -241,6 +287,8 @@ const Stake: NextPage = () => {
     >
       Upload to REPO
     </Web3Button>
+
+
 
 
               </div>
