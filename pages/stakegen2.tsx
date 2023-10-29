@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import Gen2NFTCard from "../components/Gen2NFTCard";
 import {
   gen2DropContractAddress,
-  gen2StakingContractAddress,
+  gen2stakingContractAddress,
   tokenContractAddress,
 } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
@@ -43,7 +43,7 @@ const Stake: NextPage = () => {
     "token"
   );
   const { contract: stakingContract, isLoading: isStakingContractLoading } = useContract(
-    gen2StakingContractAddress,
+    gen2stakingContractAddress,
     "staking"
   );
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
@@ -81,10 +81,10 @@ const Stake: NextPage = () => {
 
     const isApproved = await nftDropContract?.isApproved(
       address,
-      gen2StakingContractAddress
+      gen2stakingContractAddress
     );
     if (!isApproved) {
-      await nftDropContract?.setApprovalForAll(gen2StakingContractAddress, true);
+      await nftDropContract?.setApprovalForAll(gen2stakingContractAddress, true);
     }
 
     // Show loading notification
@@ -101,6 +101,7 @@ const Stake: NextPage = () => {
       } else {
         // Show error notification for canceled or rejected transaction
         toast.error("Failed to stake NFT.");
+        console.error("Error", Error);
       }
     } catch (error) {
       // Show error notification for other errors
@@ -208,9 +209,11 @@ const Stake: NextPage = () => {
             </div>
           </div>
 
+
+
           <Web3Button
             action={() => claimRewards()}
-            contractAddress={gen2StakingContractAddress}
+            contractAddress={gen2stakingContractAddress}
           >
             Claim Earned COGz Coin
           </Web3Button>
@@ -226,13 +229,7 @@ const Stake: NextPage = () => {
               )}
             </h3>
           </div>
-          <Web3Button
-            action={() => unstakeAll()}
-            contractAddress={gen2StakingContractAddress}
-          >
-            Download ALL GEN2 Bots to Account*
-          </Web3Button>
-          <p>*[Combines Multiple Wallet Withdrawals Into A Single Transaction.]<br></br>[You Will Still Have to Approve Each Staked Bot!]</p>
+          <br></br>
           <div className={styles.nftBoxGrid}>
   {stakedTokens &&
     stakedTokens[0]?.map((stakedToken: BigNumber) => (
@@ -252,12 +249,17 @@ const Stake: NextPage = () => {
                   className={styles.nftMedia}
                 />
                 <h3>{nft.metadata.name}</h3>
+   
+
                 <Web3Button
-                  contractAddress={gen2StakingContractAddress}
-                  action={() => stakeNft(nft.metadata.id)}
-                >
-                  Upload to REPO
-                </Web3Button>
+      contractAddress="0xa388f4d544bF437D8C40df85bc65A9822a0472Db"
+      action={(contract) => {
+        contract.call("stake", [[nft.metadata.id]])
+      }}
+    >
+      Upload to REPO
+    </Web3Button>
+
               </div>
             ))}
           </div>
