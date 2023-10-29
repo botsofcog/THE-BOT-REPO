@@ -6,5 +6,5 @@ export const stakingContractAddress =
   "0x6D067520526807E7A61BAC740E6D66BB62d05332";
 export const gen2DropContractAddress =
   "0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7";
-export const gen2StakingContractAddress =
+export const gen2stakingContractAddress =
   "0xa388f4d544bF437D8C40df85bc65A9822a0472Db";
