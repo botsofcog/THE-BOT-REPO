@@ -175,21 +175,25 @@ const Stake: NextPage = () => {
 </h1>
 <button onClick={router.back} className={styles.backArrow}>
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" /></button><br></br>
-      <div className={styles.tokenItem}>
+
+            <h3 className={`${styles.h1} ${styles.redText} ${styles.darkPurpleBackground}`}>Gen1/2 Staking Platform Contracts Are Being Migrated.<br></br> This Page Will Update Soon!</h3>
+
+
+ {/*      <div className={styles.tokenItem}>
         <h3 className={`${styles.tokenLabel} ${styles.blueText}`}>Total COGz In Vault:</h3>
         <p className={styles.tokenValue}>{cogzRemaining ?? "Loading..."}</p>
       </div>
       <br></br>
       
-      <hr className={`${styles.divider} ${styles.spacerTop}`} />
+      <hr className={`${styles.divider} ${styles.spacerTop}`} /> */}
 
       {!address ? (
         <ConnectWallet />
       ) : (
         <>
-          <h2>YOUR COGz COIN</h2>
+          {/* <h2>YOUR COGz COIN</h2> */}
           <div className={styles.tokenGrid}>
-            <div className={styles.tokenItem}>
+{/*             <div className={styles.tokenItem}>
               <h3 className={styles.tokenLabel}>EARNED COGz:</h3>
               <p className={styles.tokenValue}>
                 <b>
@@ -199,10 +203,10 @@ const Stake: NextPage = () => {
                 </b>{" "}
                 {tokenBalance?.symbol}
               </p>
-            </div>
+            </div> */}
 
             <div className={styles.tokenItem}>
-              <h3 className={styles.tokenLabel}>COGz BALANCE:</h3>
+              <h3 className={styles.tokenLabel}>YOUR $COGz BALANCE:</h3>
               <p className={styles.tokenValue}>
                 <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
               </p>
@@ -211,14 +215,14 @@ const Stake: NextPage = () => {
 
 
 
-          <Web3Button
+{/*           <Web3Button
             action={() => claimRewards()}
             contractAddress={gen2stakingContractAddress}
           >
             Claim Earned COGz Coin
-          </Web3Button>
+          </Web3Button> */}
 
-          <hr className={`${styles.divider} ${styles.spacerTop}`} />
+{/*           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>YOUR GEN2 REPOSITORY</h2>
           <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel}>
@@ -238,7 +242,7 @@ const Stake: NextPage = () => {
         key={stakedToken.toString()}
       />
     ))}
-</div>
+</div> */}
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>GEN2 BOTS IN WALLET</h2>
 {/*           <Web3Button
@@ -260,14 +264,14 @@ const Stake: NextPage = () => {
                 <h3>{nft.metadata.name}</h3>
    
 
-                <Web3Button
+{/*                 <Web3Button
       contractAddress="0xa388f4d544bF437D8C40df85bc65A9822a0472Db"
       action={(contract) => {
         contract.call("stake", [[nft.metadata.id]])
       }}
     >
       Upload to REPO
-    </Web3Button>
+    </Web3Button> */}
 
               </div>
             ))}

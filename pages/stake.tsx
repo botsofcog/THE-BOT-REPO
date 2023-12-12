@@ -96,7 +96,7 @@ const Stake: NextPage = () => {
     const notification = toast.info("Staking NFT...", { autoClose: false });
   
     try {
-      const tx = await stakingContract?.call("stake", [id]);
+      const tx = await stakingContract?.call("stake", [[id]]);
   
       if (tx) {
         await tx.wait();
@@ -183,21 +183,24 @@ const Stake: NextPage = () => {
       <h1 className={`${styles.h1} ${styles.redBackground}`}>- BOTS OF COG GEN1 REPO -</h1>
       <button onClick={router.back} className={styles.backArrow}>
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" /></button><br></br>
-      <div className={styles.tokenItem}>
+
+            <h3 className={`${styles.h1} ${styles.redBackground}`}>Gen1/2 Staking Platform Contracts Are Being Migrated.<br></br> This Page Will Update Soon!</h3>
+
+{/*       <div className={styles.tokenItem}>
         <h3 className={`${styles.tokenLabel} ${styles.blueText}`}>Total COGz In Vault:</h3>
         <p className={styles.tokenValue}>{cogzRemaining ?? "Loading..."}</p>
       </div>
-      <br></br>
+      <br></br> */}
       
-      <hr className={`${styles.divider} ${styles.spacerTop}`} />
+      {/* <hr className={`${styles.divider} ${styles.spacerTop}`} /> */}
 
       {!address ? (
         <ConnectWallet />
       ) : (
         <>
-          <h2>YOUR COGz COIN</h2>
+          {/* <h2>YOUR COGz COIN</h2> */}
           <div className={styles.tokenGrid}>
-            <div className={styles.tokenItem}>
+            {/* <div className={styles.tokenItem}>
               <h3 className={styles.tokenLabel}>EARNED COGz:</h3>
               <p className={styles.tokenValue}>
                 <b>
@@ -208,9 +211,9 @@ const Stake: NextPage = () => {
                 {tokenBalance?.symbol}
               </p>
             </div>
-
+ */}
             <div className={styles.tokenItem}>
-              <h3 className={styles.tokenLabel}>COGz BALANCE:</h3>
+              <h3 className={styles.tokenLabel}>YOUR  $COGz  BALANCE:</h3>
               <p className={styles.tokenValue}>
                 <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
               </p>
@@ -221,10 +224,10 @@ const Stake: NextPage = () => {
             action={() => claimRewards()}
             contractAddress={stakingContractAddress}
           >
-            Claim Earned COGz Coin
+            Claim Remaining COGz
           </Web3Button>
 
-          <hr className={`${styles.divider} ${styles.spacerTop}`} />
+{/*           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>YOUR GEN1 REPOSITORY</h2>
           <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel}>
@@ -234,10 +237,10 @@ const Stake: NextPage = () => {
                 <span className={styles.blueText}></span>
               )}
             </h3>
-          </div>
+          </div> */}
 
 
-          <div className={styles.nftBoxGrid}>
+          {/* <div className={styles.nftBoxGrid}>
             {stakedTokens &&
               stakedTokens[0]?.map((stakedToken: BigNumber) => (
                 <NFTCard
@@ -259,7 +262,9 @@ const Stake: NextPage = () => {
 
     </Web3Button>
     <br></br>
-<b><p>Please Confirm Your Gen-1 has Approval Before Uploading</p></b>
+<b><p>Please Confirm Your Gen-1 has Approval Before Uploading</p></b> */}
+          <h2>GEN1 BOTS IN WALLET</h2>
+
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -279,14 +284,14 @@ const Stake: NextPage = () => {
     </Web3Button>
     <br></br>
 <br></br> */}
-    <Web3Button
+{/*     <Web3Button
       contractAddress="0x6D067520526807E7A61BAC740E6D66BB62d05332"
       action={(contract) => {
         contract.call("stake", [[nft.metadata.id]])
       }}
     >
       Upload to REPO
-    </Web3Button>
+    </Web3Button> */}
 
 
 

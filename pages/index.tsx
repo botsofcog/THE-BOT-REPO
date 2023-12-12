@@ -20,9 +20,9 @@ const Home: NextPage = () => {
           >
             {/* MINT */}
             <Image src="/icons/mint.webp" alt="mint" width={64} height={64} />
-            <h2 className={styles.selectBoxTitle}>GEN-2 MINT</h2>
+            <h2 className={styles.selectBoxTitle}>GEN-2 MINT [MIGRATING]</h2>
             <p className={styles.selectBoxDescription}>
-            {"Mint A GEN-2 BOT; Repurposed Robots Taken From COG Corp Factories."}
+            {"GEN-2 BOTS; Repurposed Robots Taken From COG Corp Factories."}
             </p>
         </div>
         <div
@@ -45,9 +45,9 @@ const Home: NextPage = () => {
         >
           {/* Staking GEN1 */}
           <Image src="/icons/token.webp" alt="token" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>GEN-1 BOT STAKING</h2>
+          <h2 className={styles.selectBoxTitle}>GEN-1 STAKING [CLOSED]</h2>
           <p className={styles.selectBoxDescription}>
-          {"Stake Your Gen 1 Bots For COGz Tokens."}
+          {"- CURRENTLY OFFLINE -"}
           </p>
         </div>
         <div
@@ -57,9 +57,9 @@ const Home: NextPage = () => {
         >
           {/* Staking GEN2 */}
           <Image src="/icons/token2.webp" alt="token2" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>GEN-2 BOT STAKING</h2>
+          <h2 className={styles.selectBoxTitle}>GEN-2 STAKING [CLOSED]</h2>
           <p className={styles.selectBoxDescription}>
-          {"Stake Your Gen 2 Bots For COGz Tokens."}
+          {"- CURRENTLY OFFLINE -"}
           </p>
         </div>
         <div
