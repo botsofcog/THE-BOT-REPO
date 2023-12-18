@@ -264,7 +264,7 @@ const Stake: NextPage = () => {
                   metadata={nft.metadata}
                   className={styles.nftMedia}
                 />
-                <h3>{nft.metadata.name}</h3>
+                <h3 className={styles.redText}>{nft.metadata.name}</h3>
    
 
 {/*                 <Web3Button
