@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           >
             {/* MINT */}
             <Image src="/icons/mint.webp" alt="mint" width={64} height={64} />
-            <h2 className={styles.selectBoxTitle}>GEN-2 MINT [MIGRATING]</h2>
+            <h2 className={styles.selectBoxTitle}>GEN-2 MINT</h2>
             <p className={styles.selectBoxDescription}>
             {"GEN-2 BOTS; Repurposed Robots Taken From COG Corp Factories."}
             </p>
@@ -45,9 +45,9 @@ const Home: NextPage = () => {
         >
           {/* Staking GEN1 */}
           <Image src="/icons/token.webp" alt="token" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>GEN-1 STAKING [CLOSED]</h2>
+          <h2 className={styles.selectBoxTitle}>GEN-1 GALLERY</h2>
           <p className={styles.selectBoxDescription}>
-          {"- CURRENTLY OFFLINE -"}
+          {"- STAKING CURRENTLY OFFLINE -"}
           </p>
         </div>
         <div
@@ -57,9 +57,9 @@ const Home: NextPage = () => {
         >
           {/* Staking GEN2 */}
           <Image src="/icons/token2.webp" alt="token2" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>GEN-2 STAKING [CLOSED]</h2>
+          <h2 className={styles.selectBoxTitle}>GEN-2 GALLERY</h2>
           <p className={styles.selectBoxDescription}>
-          {"- CURRENTLY OFFLINE -"}
+          {"- STAKING CURRENTLY OFFLINE -"}
           </p>
         </div>
         <div

@@ -184,7 +184,7 @@ const Stake: NextPage = () => {
       <button onClick={router.back} className={styles.backArrow}>
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" /></button><br></br>
 
-            <h3 className={`${styles.h1} ${styles.redBackground}`}>Gen1/2 Staking Platform Contracts Are Being Migrated.<br></br> This Page Will Update Soon!</h3>
+            <h3 className={`${styles.redBackground}`}>Gen1/2 Staking Platform Contracts Are Being Migrated.<br></br> This Page Will Update Soon!</h3>
 
 {/*       <div className={styles.tokenItem}>
         <h3 className={`${styles.tokenLabel} ${styles.blueText}`}>Total COGz In Vault:</h3>
@@ -220,12 +220,12 @@ const Stake: NextPage = () => {
             </div>
           </div>
 
-          <Web3Button
+{/*           <Web3Button
             action={() => claimRewards()}
             contractAddress={stakingContractAddress}
           >
             Claim Remaining COGz
-          </Web3Button>
+          </Web3Button> */}
 
 {/*           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>YOUR GEN1 REPOSITORY</h2>
@@ -263,8 +263,11 @@ const Stake: NextPage = () => {
     </Web3Button>
     <br></br>
 <b><p>Please Confirm Your Gen-1 has Approval Before Uploading</p></b> */}
-          <h2>GEN1 BOTS IN WALLET</h2>
-
+          <hr className={`${styles.divider} ${styles.spacerTop}`} />
+<h2 className={`${styles.h1} ${styles.redBackground}`}>GEN1 BOTS IN WALLET</h2>
+<a href="https://opensea.io/collection/botsofcog">
+          <b>VIEW ENTIRE BOTS OF COG GEN-1 COLLECTION</b> 
+        </a>
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -273,6 +276,7 @@ const Stake: NextPage = () => {
                   className={styles.nftMedia}
                 />
                 <h3>{nft.metadata.name}</h3>
+                
                 
 {/* <Web3Button
       contractAddress="0x1BBCa92FC889Af891e3B666aee7Cb3534B83d7B7"

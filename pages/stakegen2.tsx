@@ -176,7 +176,7 @@ const Stake: NextPage = () => {
 <button onClick={router.back} className={styles.backArrow}>
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" /></button><br></br>
 
-            <h3 className={`${styles.h1} ${styles.redText} ${styles.darkPurpleBackground}`}>Gen1/2 Staking Platform Contracts Are Being Migrated.<br></br> This Page Will Update Soon!</h3>
+            <h3 className={`${styles.redText} ${styles.darkPurpleBackground}`}>Gen1/2 Staking Platform Contracts Are Being Migrated.<br></br> This Page Will Update Soon!</h3>
 
 
  {/*      <div className={styles.tokenItem}>
@@ -205,9 +205,9 @@ const Stake: NextPage = () => {
               </p>
             </div> */}
 
-            <div className={styles.tokenItem}>
+            <div className={styles.tokenItem2}>
               <h3 className={styles.tokenLabel}>YOUR $COGz BALANCE:</h3>
-              <p className={styles.tokenValue}>
+              <p className={styles.tokenValue2}>
                 <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
               </p>
             </div>
@@ -244,7 +244,10 @@ const Stake: NextPage = () => {
     ))}
 </div> */}
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2>GEN2 BOTS IN WALLET</h2>
+          <h2 className={`${styles.h1} ${styles.redText} ${styles.darkPurpleBackground}`}>GEN2 BOTS IN WALLET</h2>
+          <a href="https://opensea.io/collection/bots-of-cog-gen2">
+          <b>VIEW ENTIRE BOTS OF COG GEN-2 COLLECTION</b> 
+        </a>
 {/*           <Web3Button
       contractAddress="0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7"
       action={(contract) => {
@@ -256,7 +259,7 @@ const Stake: NextPage = () => {
     </Web3Button> */}
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
-              <div className={styles.nftBox} key={nft.metadata.id.toString()}>
+              <div className={styles.nftBox2} key={nft.metadata.id.toString()}>
                 <ThirdwebNftMedia
                   metadata={nft.metadata}
                   className={styles.nftMedia}
