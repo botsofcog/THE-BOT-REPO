@@ -22,7 +22,7 @@ const NFTCard: FC<NFTCardProps> = ({ tokenId }) => {
   return (
     <>
       {nft && (
-        <div className={styles.nftBox}>
+        <div className={styles.nftBox2}>
           {nft.metadata && (
             <ThirdwebNftMedia
               metadata={nft.metadata}
