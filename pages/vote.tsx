@@ -103,7 +103,7 @@ const GET_PROPOSALS = gql`
 export default function Home() {
   const hub = "https://hub.snapshot.org"; // or https://testnet.snapshot.org for testnet
   const contractAddress1 = "0x1bbca92fc889af891e3b666aee7cb3534b83d7b7";
-  const contractAddress2 = "0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a";
+  const contractAddress2 = "0xfFd0A8D2FeC4144b3D4dfcD37499ef46b8cfE3Fd";
   const client = new snapshot.Client712(hub);
   const router = useRouter();
   const address = useAddress();
