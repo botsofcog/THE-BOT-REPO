@@ -5,6 +5,6 @@ export const tokenContractAddress =
 export const stakingContractAddress =
   "0x6D067520526807E7A61BAC740E6D66BB62d05332";
 export const gen2DropContractAddress =
-  "0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a";
+  "0xfFd0A8D2FeC4144b3D4dfcD37499ef46b8cfE3Fd";
 export const gen2stakingContractAddress =
   "0xa388f4d544bF437D8C40df85bc65A9822a0472Db";
