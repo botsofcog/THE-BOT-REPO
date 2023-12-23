@@ -8,3 +8,7 @@ export const gen2DropContractAddress =
   "0xfFd0A8D2FeC4144b3D4dfcD37499ef46b8cfE3Fd";
 export const gen2stakingContractAddress =
   "0xa388f4d544bF437D8C40df85bc65A9822a0472Db";
+export const oldContractAddress =
+  "0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7";
+export const brokenContractAddress =
+  "0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a";
