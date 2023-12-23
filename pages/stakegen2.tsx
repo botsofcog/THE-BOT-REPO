@@ -284,6 +284,11 @@ const Stake: NextPage = () => {
 
       {/* Toast container for pop-up notifications */}
       <ToastContainer />
+      <p>{/* <a href="https://botrepo.botsofcog.io/stakegen2">- Stake Your GEN2 Bot(s) For COGz Tokens -</a><br></br> */}
+        <a href="https://www.botsofcog.io">- BACK TO BOTS OF COG HOMEPAGE -</a>
+        <br />
+        <a href="https://twitter.com/botsofcog">- BoC Twitter -</a>
+      </p>
     </div>
   );
 };

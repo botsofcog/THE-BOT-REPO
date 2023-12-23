@@ -308,7 +308,9 @@ const Stake: NextPage = () => {
 
       {/* Toast container for pop-up notifications */}
       <ToastContainer />
+      
     </div>
+    
   );
 };
 

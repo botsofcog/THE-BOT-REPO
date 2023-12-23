@@ -862,6 +862,13 @@ export default function Home() {
           )}
         </div>
       </>
+      <br></br>
+      <div style={{display: 'flex',justifyContent: 'center'}}><p>
+        <a href="https://www.botsofcog.io">- BACK TO BOTS OF COG HOMEPAGE -</a>
+        <br />
+        <a href="https://twitter.com/botsofcog">- BoC Twitter -</a>
+      </p></div>
     </div>
+    
   );
 }

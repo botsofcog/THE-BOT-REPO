@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         >
           {/* BOT BATTLE */}
           <Image src="/icons/botbattle.webp" alt="botbattle" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>Bot Battle</h2>
+          <h2 className={styles.selectBoxTitle}>BOT BATTLE</h2>
           <p className={styles.selectBoxDescription}>
             {"Burn/Transfer Bots To Others to Gain Death Cogs! Prizes Each Season."}
           </p>
@@ -69,24 +69,33 @@ const Home: NextPage = () => {
         >
           {/* VOTE */}
           <Image src="/icons/vote.webp" alt="vote" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}> -THE SIGNAL- <br></br>Narrative Adventure </h2>
+          <h2 className={styles.selectBoxTitle}> -THE SIGNAL- </h2>
           <p className={styles.selectBoxDescription}>
-          {"Voting dApp - Use COGz Tokens to determine Story Events and other Lore Related Choices."}
+          {"Vote on Story Events and Choices."}
           </p>
         </div>
         <div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => window.open('https://withkoji.com/@botsofcog', '_self')}
-        >
+          onClick={() => router.push(`/recycle`)}
+          >
           {/* OTHER */}
-          <Image src="/icons/extra.webp" alt="extra" width={64} height={64} />
-          <h2 className={styles.selectBoxTitle}>WEB LINKS +<br></br>EXTRAS</h2>
+          <Image src="/icons/recycle.webp" alt="burn2mint" width={64} height={64} />
+          <h2 className={styles.selectBoxTitle}> RECYCLE BOTS </h2>
           <p className={styles.selectBoxDescription}>
-            {"The Official Bots of COG Web2 Hub - Profile Links, Portfolios, and More!"}
+            {"Burn Old Bots to Mint Upgraded Scrap."}
           </p>
+          
         </div>
+        
       </div>
+      <p>{/* <a href="https://botrepo.botsofcog.io/stakegen2">- Stake Your GEN2 Bot(s) For COGz Tokens -</a><br></br> */}
+        <a href="https://www.botsofcog.io">- BACK TO BOTS OF COG HOMEPAGE -</a>
+        <br />
+        <a href="https://twitter.com/botsofcog">- BoC Twitter -</a>
+        <br></br>
+        <a href="https://withkoji.com/@botsofcog">- Link Hub -</a>
+      </p>
     </div>
   );
   
