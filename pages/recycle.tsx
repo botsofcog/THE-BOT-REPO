@@ -75,7 +75,7 @@ const Recycle: NextPage = () => {
 
 
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
-      <Web3Button
+{/*       <Web3Button
       contractAddress="0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7"
       action={(contract) => {
         contract.call("setApprovalForAll", [address, true])
@@ -83,9 +83,9 @@ const Recycle: NextPage = () => {
     >
       Approve Migrated GEN-2 Contract
 
-    </Web3Button>
+    </Web3Button> */}
 
-{/*     <Web3Button
+<Web3Button
       contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
       action={(contract) => {
         contract.call("setApprovalForAll", [address, true])
@@ -93,15 +93,15 @@ const Recycle: NextPage = () => {
     >
       Approve Failed GEN-2 Contract
 
-    </Web3Button> */}
+    </Web3Button>
       
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 className={`${styles.greenText}`}>Available Bots To Recycle:</h2>
-          <p className={`${styles.whiteText}`}>Bots from Locked/Migrated Contract <a href="https://polygonscan.com/address/0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7">0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7</a></p>
+          <p className={`${styles.whiteText}`}>Bots from Failed Contract <a href="https://polygonscan.com/address/0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a">0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a</a></p>
 
 
 
-{/* <div className={styles.nftBoxGrid}>
+<div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               <div className={styles.nftBox3} key={nft.metadata.id.toString()}>
                 <ThirdwebNftMedia
@@ -119,11 +119,11 @@ action={(contract) => {
     </Web3Button>
               </div>
             ))}
-          </div> */}
+          </div>
 
 
 
-<div className={styles.nftBoxGrid}>
+{/* <div className={styles.nftBoxGrid}>
   {oldContractOwnedNfts?.map((nft) => (
     <div className={styles.nftBox3} key={nft.metadata.id.toString()}>
       <ThirdwebNftMedia
@@ -141,7 +141,7 @@ action={(contract) => {
     </Web3Button>
     </div>
   ))}
-</div>
+</div> */}
 
 
       {/* Toast container for pop-up notifications */}
