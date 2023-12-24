@@ -60,7 +60,7 @@ const Recycle: NextPage = () => {
     "staking"
   );
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
-  const { data: scrapOwnedNfts } = useOwnedNFTs(scrapDropContract, address);
+  const { data: scrapContractOwnedNfts } = useOwnedNFTs(scrapDropContract, address);
   const { data: oldContractOwnedNfts } = useOwnedNFTs(oldnftDropContract, address);
 
   return (
@@ -71,6 +71,7 @@ const Recycle: NextPage = () => {
 <button onClick={router.back} className={styles.backArrow}>
             <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" /></button>
             <br></br>
+            <ConnectWallet></ConnectWallet>
 <h3 className={`${styles.whiteText}`}>Burn Incomplete/Unused Bot Tokens To Redeem Scrap Tokens Used for Future Upgrades. </h3>
 <div className={styles.optionSelectBox3}>
         <div className={styles.whiteBox}>
@@ -150,15 +151,15 @@ action={(contract) => {
 
       {/* Toast container for pop-up notifications */}
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
-<br></br>
-<h2 className={`${styles.whiteText}`}>EARNED SCRAP:</h2>
-<p><a href="https://opensea.io/collection/bots-of-cog-scrapyard">Scrap Collection</a></p>
+{/* <br></br>
+<h2 className={`${styles.whiteText}`}>EARNED SCRAP:</h2> */}
+<p><a href="https://opensea.io/collection/bots-of-cog-scrapyard"><b>Official Scrap Collection</b></a></p>
 <p className={`${styles.whiteText}`}><a href="https://polygonscan.com/address/0x937F774e3eeFd60cCaFD895a80DEcEa90245e775">0x937F774e3eeFd60cCaFD895a80DEcEa90245e775</a></p>
 
 
-<div className={styles.nftBoxGrid}>
-  {scrapOwnedNfts?.map((nft) => (
-    <div className={styles.nftBox4} key={nft.metadata.id.toString()}>
+{/* <div className={styles.nftBoxGrid}>
+  {scrapContractOwnedNfts?.map((nft) => (
+    <div className={styles.nftBox} key={nft.metadata.id.toString()}>
       <ThirdwebNftMedia
         metadata={nft.metadata}
         className={styles.nftMedia}
@@ -168,7 +169,7 @@ action={(contract) => {
   ))}
 </div> 
 
-<br></br>
+<br></br> */}
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
       <ToastContainer />
