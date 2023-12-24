@@ -78,9 +78,6 @@ const Recycle: NextPage = () => {
         </div>
       </div>
 
-
-
-      <hr className={`${styles.divider} ${styles.spacerTop}`} />
 {/*       <Web3Button
       contractAddress="0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7"
       action={(contract) => {
@@ -91,15 +88,7 @@ const Recycle: NextPage = () => {
 
     </Web3Button> */}
 
-<Web3Button
-      contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
-      action={(contract) => {
-        contract.call("setApprovalForAll", [address, true])
-      }}
-    >
-      Approve Failed GEN-2 Contract
 
-    </Web3Button>
       
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 className={`${styles.greenText}`}>AVAILABLE TO RECYCLE:</h2>
@@ -115,6 +104,15 @@ const Recycle: NextPage = () => {
                   className={styles.nftMedia} 
                 /> 
                 <h3 className={`${styles.whiteText}`}>{nft.metadata.name}</h3>
+                <Web3Button
+      contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
+      action={(contract) => {
+        contract.call("approve", [address, nft.metadata.id])
+      }}
+    >
+      Approve
+    </Web3Button>
+    <br></br>
       <Web3Button
 contractAddress="0x937F774e3eeFd60cCaFD895a80DEcEa90245e775"
 action={(contract) => {
