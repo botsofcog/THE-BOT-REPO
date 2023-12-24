@@ -35,31 +35,20 @@ import { useRouter } from "next/router";
 
 const NUM_VISIBLE_SCRAP_NFTS = 4;
 
-const Stake: NextPage = () => {
+const Recycle: NextPage = () => {
   const address = useAddress();
   const router = useRouter();
-  const { contract: nftDropContract } = useContract(
-    brokenContractAddress,
-    "nft-drop"
-  );
+
   const { contract: scrapAddress } = useContract(
     scrapContractAddress,
     "scrap"
   );
-  const { contract: stakingContract, isLoading: isStakingContractLoading } = useContract(
-    stakingContractAddress
-  );
-  const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
   const { data: ownedScrapNfts } = useOwnedNFTs(scrapAddress, address);
-  const { data: ownedGen2Nfts } = useOwnedNFTs(nftDropContract, address);
-  const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
-  const { data: stakedTokens, isLoading: isStakedTokensLoading } = useContractRead(
-    stakingContract,
-    "getStakeInfo",
-    [address]
+  const { contract: nftDropContract } = useContract(
+    gen2DropContractAddress,
+    "nft-drop"
   );
-  const [cogzRemaining, setCogzRemaining] = useState<string | undefined>();
-  const [stakedBotIds, setStakedBotIds] = useState<number[]>([]);
+  const { data: ownedGen2Nfts } = useOwnedNFTs(nftDropContract, address);
   const [scrollIndex, setScrollIndex] = useState(0);
   const maxIndex = Math.max(0, (ownedScrapNfts?.length || 0) - NUM_VISIBLE_SCRAP_NFTS);
 
@@ -79,16 +68,11 @@ const Stake: NextPage = () => {
     }
   };
 
-  if (isStakingContractLoading) {
-    return <div>Loading</div>;
-  }
-
   return (
     <div className={styles.container}>
       <h1 className={`${styles.h1} ${styles.whiteText}`}>
         - THE SCRAPYARD -
       </h1>
-      <p>(Tokens Take A Minute To Load. Please Be Patient.)</p>
       <br></br>
       <button onClick={router.back} className={styles.backArrow}>
         <IoArrowBackOutline size={25} color="rgba(255,166,0,1)" />
@@ -157,12 +141,13 @@ const Stake: NextPage = () => {
           </div>
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
-          <h2 className={`${styles.greenText}`}>AVAILABLE TO RECYCLE:</h2>
+          <h2 className={`${styles.whiteText}`}>VERIFY CLONES TO RECYCLE:</h2>
+          <p className={`${styles.whiteText}`}>All Held GEN2 Are Displayed - Only Clones/Duplicates From Failed Collection Will Burn. Active Collection will Throw an Error.</p>
           <p className={`${styles.whiteText}`}>
-            Bots from Failed Contract:{" "}
+[ Failed Contract:{" "}
             <a href="https://polygonscan.com/address/0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a">
               0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a
-            </a>
+            </a> ]
           </p>
 
           <div className={styles.nftBoxGrid3}>
@@ -189,7 +174,7 @@ const Stake: NextPage = () => {
                 <Web3Button
                   contractAddress="0x937F774e3eeFd60cCaFD895a80DEcEa90245e775"
                   action={(contract) => {
-                    contract.call("burnAndClaim", [[nft.metadata.id, 1]]);
+                    contract.call("burnAndClaim", [nft.metadata.id, 1]);
                   }}
                 >
                   RECYCLE
@@ -214,4 +199,4 @@ const Stake: NextPage = () => {
   );
 };
 
-export default Stake;
+export default Recycle;
