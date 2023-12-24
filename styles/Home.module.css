@@ -10,7 +10,7 @@
 }
 
 .h1 {
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   font-size: 4rem;
 }
 
@@ -39,11 +39,34 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1%;
+  gap: 2%;
   margin-top: 40px;
   flex-wrap: wrap;
 }
-
+.nftBoxGrid2 {
+  width: 10px;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+}
+.nftBoxGrid3 {
+  width: 10px;
+  max-width: 100%;
+  min-width: 60%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minimum width as needed */
+  gap: 15px; /* Adjust the gap between grid items */
+}
 .nftBox {
   border-radius: 16px;
   border: 2px solid #3eb2ff;
@@ -70,23 +93,53 @@
   border-radius: 16px;
   border: 4px solid #278800;
   width: 20%;
-  min-width: 380px;
+  min-width: 350px;
   min-height: 180px;
-  margin-bottom: 1%;
-  padding: 20px;
+  padding: 10px;
   margin-right: 10px;
   border-style: dashed;
-  
+
 }
 .nftBox4 {
   border-radius: 16px;
   border: 4px solid #919191;
-  width: 20%;
-  min-width: 350px;
+  width: 10%;
+  min-width: 325px;
   min-height: 150px;
   margin-bottom: 1%;
   padding: 10px;
   margin-right: 10px;
+  align-items: center;
+}
+
+/* New styles for the mint button and its container */
+.buttonContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mintButton {
+  padding: 20px 60px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #FFD700;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mintButton:hover {
+  background-color: #000;
+  color: #FFD700;
+}
+
+.mintStatus {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #888; /* Adjust color as needed */
 }
 
 .optionSelectBox {
@@ -135,7 +188,22 @@
   padding-right: 12px;
   margin-bottom: 18px;
   padding: 12px;
-  cursor: pointer;
+}
+.optionSelectBox4 {
+  border-radius: 16px;
+  border: 4px solid #aaaaaa;
+  width: 50%;
+  max-width: 450px;
+  min-height: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 18px;
+  padding: 12px;
 }
 .selectBoxTitle {
   font-size: 2.00rem;
@@ -173,6 +241,9 @@
 @media only screen and (max-width: 800px) {
   .nftBoxGrid {
     justify-content: center;
+  }
+  .nftBoxGrid3 {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
   }
   .nftBox {
     width: 90%;
@@ -459,7 +530,9 @@
 .whiteText {
   color: rgb(185, 185, 185);
 }
-
+.magentaText {
+  color: rgb(255, 0, 221);
+}
 .darkPurpleBackground {
   background-color: rgba(85, 1, 134, 0.281);
 }
