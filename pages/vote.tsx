@@ -398,9 +398,9 @@ export default function Home() {
               </p>
           </p>
         </div>
-        <h1 style={{ wordWrap: "break-word", color: "#64b4ff" }}>"The Signal" <br></br> Vote on The Story So Far...</h1>
-<p><h4>* Users Must Have At Least One(1) Bot Unstaked To Verify Their Vote.<br></br> <i>(COG Bots Cannot Mine COGz & Verify Votes At the Same Time)</i> <br></br>
-<br></br>* Voting Does Not Permanently "Spend" Users COGz.<br></br> Make Sure To Withrdraw Any Mined COGz Before Voting! <i> (The Quantity of COGz Held Equals Your Current Voting Power) </i></h4><br></br>Happy Voting!</p><br></br>
+        <h1>The Signal<br></br> Vote on The Story So Far...</h1>
+<p><h4>Users Must Have At Least One(1) Bot Unstaked To Verify Their Vote.<br></br> <i>(COG Bots Cannot Mine COGz and Verify Votes At the Same Time)</i> <br></br>
+<br></br>Voting Does Not Permanently Spend Users COGz.<br></br> Make Sure To Withrdraw Any Mined COGz Before Voting! <i> (The Quantity of COGz Held Equals Your Current Voting Power) </i></h4><br></br>Happy Voting!</p><br></br>
           <ConnectWallet />
           {balance1 == 0 && balance2 == 0 && (
             <h3>You must hold either a&nbsp;
@@ -419,7 +419,7 @@ export default function Home() {
               >
                 Gen2
               </a>
-              &nbsp;'Bots Of COG' NFT <u>In Your Wallet</u>, In Order To Vote. <br></br><i>(Please Unstake A Minimum of 1 Bot)</i>
+Bots Of COG NFT <u>In Your Wallet</u>, In Order To Vote. <br></br><i>(Please Unstake A Minimum of 1 Bot)</i>
             </h3>
           )}
 
@@ -537,9 +537,9 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div>
+{/*                       <div>
                         <ReactMarkdown children={proposalBodies[proposalIndex]} components={markdownComponents}/>
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Choices */}
