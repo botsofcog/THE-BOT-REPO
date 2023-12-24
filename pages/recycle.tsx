@@ -19,6 +19,7 @@ import {
   tokenContractAddress,
   oldContractAddress,
   brokenContractAddress,
+  scrapContractAddress,
 } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
 import { nftDropContractAddress } from "../consts/contractAddresses";
@@ -42,6 +43,10 @@ const Recycle: NextPage = () => {
     brokenContractAddress,
     "broken-nft-drop"
   );
+  const { contract: scrapDropContract } = useContract(
+    scrapContractAddress,
+    "scrap-nft-drop"
+  );
   const { contract: oldnftDropContract } = useContract(
     oldContractAddress,
     "old-nft-drop"
@@ -55,6 +60,7 @@ const Recycle: NextPage = () => {
     "staking"
   );
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
+  const { data: scrapOwnedNfts } = useOwnedNFTs(scrapDropContract, address);
   const { data: oldContractOwnedNfts } = useOwnedNFTs(oldnftDropContract, address);
 
   return (
@@ -96,7 +102,7 @@ const Recycle: NextPage = () => {
     </Web3Button>
       
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2 className={`${styles.greenText}`}>Available Bots To Recycle:</h2>
+          <h2 className={`${styles.greenText}`}>AVAILABLE TO RECYCLE:</h2>
           <p className={`${styles.whiteText}`}>Bots from Failed Contract <a href="https://polygonscan.com/address/0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a">0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a</a></p>
 
 
@@ -145,6 +151,28 @@ action={(contract) => {
 
 
       {/* Toast container for pop-up notifications */}
+      <hr className={`${styles.divider} ${styles.spacerTop}`} />
+<br></br>
+<h2 className={`${styles.whiteText}`}>EARNED SCRAP:</h2>
+<p><a href="https://opensea.io/collection/bots-of-cog-scrapyard">Scrap Collection</a></p>
+<p className={`${styles.whiteText}`}><a href="https://polygonscan.com/address/0x937F774e3eeFd60cCaFD895a80DEcEa90245e775">0x937F774e3eeFd60cCaFD895a80DEcEa90245e775</a></p>
+
+
+<div className={styles.nftBoxGrid}>
+  {scrapOwnedNfts?.map((nft) => (
+    <div className={styles.nftBox4} key={nft.metadata.id.toString()}>
+      <ThirdwebNftMedia
+        metadata={nft.metadata}
+        className={styles.nftMedia}
+      />
+      <h3 className={`${styles.whiteText}`}>{nft.metadata.name}</h3>
+    </div>
+  ))}
+</div> 
+
+<br></br>
+      <hr className={`${styles.divider} ${styles.spacerTop}`} />
+
       <ToastContainer />
       <p><a href="https://opensea.io/collection/bots-of-cog-gen2">
           <b>OFFICIAL GEN-2 COLLECTION</b> 
@@ -156,6 +184,7 @@ action={(contract) => {
       </p>
     </div>
   );
+  
 };
 
 export default Recycle;
