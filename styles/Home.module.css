@@ -78,6 +78,16 @@
   border-style: dashed;
   
 }
+.nftBox4 {
+  border-radius: 16px;
+  border: 4px solid #919191;
+  width: 20%;
+  min-width: 350px;
+  min-height: 150px;
+  margin-bottom: 1%;
+  padding: 10px;
+  margin-right: 10px;
+}
 
 .optionSelectBox {
   border-radius: 16px;
