@@ -12,3 +12,6 @@ export const oldContractAddress =
   "0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7";
 export const brokenContractAddress =
   "0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a";
+export const scrapContractAddress =
+  "0x937F774e3eeFd60cCaFD895a80DEcEa90245e775";
+  
