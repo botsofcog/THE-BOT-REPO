@@ -484,7 +484,19 @@
   width: 100%;
   height: 100%;
 }
+/* Adjustments for smaller screens (mobile devices) */
+@media only screen and (max-width: 800px) {
+  .iframeContainer {
+    padding-bottom: 100%; /* Adjust the aspect ratio or remove it for full width */
+    height: auto; /* Set height to auto to allow the iframe to adjust its height */
+  }
 
+  .iframe {
+    position: relative; /* Change to relative positioning */
+    width: 100%; /* Ensure the iframe takes the full width */
+    height: 100%; /* Ensure the iframe takes the full height */
+  }
+}
 .goldBox {
   position: relative;
   display: flex;
