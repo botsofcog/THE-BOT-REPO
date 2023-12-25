@@ -497,6 +497,7 @@
     height: 100%; /* Ensure the iframe takes the full height */
   }
 }
+
 .goldBox {
   position: relative;
   display: flex;
