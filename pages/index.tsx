@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             onClick={() => router.push(`/cmyk`)}
           >
             {/* MINT */}
-            <Image src="/icons/extra.webp" alt="mint" width={64} height={64} />
+            <Image src="/icons/cmyk.webp" alt="mintcmyk" width={64} height={64} />
             <h2 className={styles.selectBoxTitle}>CMYK MINT <br></br>[ OFFLINE ]</h2>
             <p className={styles.selectBoxDescription}>
             {"This Mint Page Will Go LIVE @ 12/31/23 - 11:59PM (MST-7)"}
