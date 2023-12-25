@@ -497,6 +497,16 @@
     height: 100%; /* Ensure the iframe takes the full height */
   }
 }
+/* Adjustments for smaller screens (mobile devices) */
+@media only screen and (max-width: 800px) {
+  /* Centering the entire content */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 
 .goldBox {
   position: relative;
