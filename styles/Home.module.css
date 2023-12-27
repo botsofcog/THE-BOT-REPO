@@ -468,6 +468,27 @@
   margin-left: 10px;
   padding: 20px;
 }
+.scrollButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.scrollButtons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 100px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s;
+}
+
+.scrollButtons button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 .iframeContainer {
   position: relative;
