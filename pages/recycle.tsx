@@ -140,24 +140,21 @@ const Recycle: NextPage = () => {
           </div>
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
-          <h2 className={`${styles.whiteText}`}>VERIFY CLONES TO RECYCLE:</h2>
-          <Web3Button
-        contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
-        action={(contract) => {
-          contract.call("setApprovalForAll", [stakingContractAddress, true]);
-        }}
-      >
-        Set Approval For All
-      </Web3Button>
+          <h2 className={`${styles.whiteText}`}>NFTS/TOKENS TO RECYCLE:</h2>
       <br></br>
-          <p className={`${styles.whiteText}`}>All Held GEN2 Are Displayed - Only Clones/Duplicates From Failed Collection Will Burn. Active Collection will Throw an Error.</p>
-          <p className={`${styles.whiteText}`}>
-[ Failed Contract:{" "}
+          <p className={`${styles.whiteText}`}><b>All Your GEN2s Are Displayed Here</b> - <i>Only Clones From Duplicate Collections Will RECYCLE.</i>  <br></br></p>
+          <p className={`${styles.greenText}`}><b> CURRENTLY BURNING ---{">"} </b>
+<i>[ Failed Contract:{" "}
             <a href="https://polygonscan.com/address/0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a">
               0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a
+            </a> ]</i>
+          </p>
+          <p className={`${styles.redText}`}>
+[ Original Contract:{" "}
+            <a href="https://polygonscan.com/address/0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7">
+            0x8B9Ada84CBFBE266d103E6c90717Df789B63d0F7
             </a> ]
           </p>
-
           <div className={styles.nftBoxGrid3}>
             {ownedGen2Nfts?.map((nft) => (
               <div className={styles.nftBox3} key={nft.metadata.id.toString()}>
@@ -168,7 +165,7 @@ const Recycle: NextPage = () => {
                 <h3 className={`${styles.whiteText}`}>
                   {nft.metadata.name}
                 </h3>
-
+{/* 
                 <Web3Button
                   contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
                   action={(contract) => {
@@ -177,8 +174,8 @@ const Recycle: NextPage = () => {
                 >
                   APPROVE
                 </Web3Button>
-                <br></br>
-                <br></br>
+                <br></br> */}
+                
                 <Web3Button
                   contractAddress="0x937F774e3eeFd60cCaFD895a80DEcEa90245e775"
                   action={(contract) => {
@@ -187,9 +184,12 @@ const Recycle: NextPage = () => {
                 >
                   RECYCLE
                 </Web3Button>
+                
               </div>
             ))}
           </div>
+          <br></br>
+          <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
           <p>
             <a href="https://opensea.io/collection/bots-of-cog-gen2">
