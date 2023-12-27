@@ -1,4 +1,5 @@
 import { Polygon } from "@thirdweb-dev/chains";
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import {
   ThirdwebNftMedia,
   useAddress,
@@ -80,22 +81,23 @@ const Recycle: NextPage = () => {
       <br></br>
       <ConnectWallet></ConnectWallet>
       <h3 className={`${styles.whiteText}`}>
-        Burn Incomplete/Unused Bot Tokens To Redeem Scrap Tokens Used for Future Upgrades.
+        Exchange Incomplete Bots <br></br><i>OR</i><br></br>x 500.00 $COGz Coins<br></br>=<br></br>Redeem SCRAP; Used for Future Upgrades.
       </h3>
-      <Web3Button
-        contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
-        action={(contract) => {
-          contract.call("setApprovalForAll", [stakingContractAddress, true]);
-        }}
-      >
-        Set Approval For All
-      </Web3Button>
+
 
       {!address ? (
         <ConnectWallet />
       ) : (
         <>
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
+<br></br>
+
+          <iframe
+    src="https://embed.ipfscdn.io/ipfs/bafybeicd3qfzelz4su7ng6n523virdsgobrc5pcbarhwqv3dj3drh645pi/?contract=0x937F774e3eeFd60cCaFD895a80DEcEa90245e775&chain=%7B%22name%22%3A%22Polygon+Mainnet%22%2C%22chain%22%3A%22Polygon%22%2C%22rpc%22%3A%5B%22https%3A%2F%2Fpolygon.rpc.thirdweb.com%2F%24%7BTHIRDWEB_API_KEY%7D%22%5D%2C%22nativeCurrency%22%3A%7B%22name%22%3A%22MATIC%22%2C%22symbol%22%3A%22MATIC%22%2C%22decimals%22%3A18%7D%2C%22shortName%22%3A%22matic%22%2C%22chainId%22%3A137%2C%22testnet%22%3Afalse%2C%22slug%22%3A%22polygon%22%2C%22icon%22%3A%7B%22url%22%3A%22ipfs%3A%2F%2FQmcxZHpyJa8T4i63xqjPYrZ6tKrt55tZJpbXcjSDKuKaf9%2Fpolygon%2F512.png%22%2C%22width%22%3A512%2C%22height%22%3A512%2C%22format%22%3A%22png%22%7D%7D&clientId=f2d6855133f2f2331b61b0b5c2b2c52f&theme=dark"
+    width="600px"
+    height="600px"
+></iframe>
+
           <h2 className={`${styles.whiteText}`}>YOUR SCRAP:</h2>
           <p>
             <a href="https://opensea.io/collection/bots-of-cog-scrapyard">
@@ -109,16 +111,13 @@ const Recycle: NextPage = () => {
           </p>
 
           <div className={styles.scrollButtons}>
-            <button onClick={scrollLeft} disabled={scrollIndex === 0}>
-              Scroll Left
-            </button>
-            <button
-              onClick={scrollRight}
-              disabled={scrollIndex === maxIndex}
-            >
-              Scroll Right
-            </button>
-          </div>
+  <button onClick={scrollLeft} disabled={scrollIndex === 0}>
+    <IoChevronBackOutline size={20} />
+  </button>
+  <button onClick={scrollRight} disabled={scrollIndex === maxIndex}>
+    <IoChevronForwardOutline size={20} />
+  </button>
+</div>
 
           <div className={styles.nftBoxGrid2}>
             {ownedScrapNfts &&
@@ -142,6 +141,15 @@ const Recycle: NextPage = () => {
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
           <h2 className={`${styles.whiteText}`}>VERIFY CLONES TO RECYCLE:</h2>
+          <Web3Button
+        contractAddress="0x71eA5c257ae5dc3C0CD7867fEa30d236E2c8dF6a"
+        action={(contract) => {
+          contract.call("setApprovalForAll", [stakingContractAddress, true]);
+        }}
+      >
+        Set Approval For All
+      </Web3Button>
+      <br></br>
           <p className={`${styles.whiteText}`}>All Held GEN2 Are Displayed - Only Clones/Duplicates From Failed Collection Will Burn. Active Collection will Throw an Error.</p>
           <p className={`${styles.whiteText}`}>
 [ Failed Contract:{" "}
