@@ -177,13 +177,27 @@ const Recycle: NextPage = () => {
                 <br></br> */}
                 
                 <Web3Button
-                  contractAddress="0x937F774e3eeFd60cCaFD895a80DEcEa90245e775"
-                  action={(contract) => {
-                    contract.call("burnAndClaim", [nft.metadata.id, 1]);
-                  }}
-                >
-                  RECYCLE
-                </Web3Button>
+  contractAddress="0x937F774e3eeFd60cCaFD895a80DEcEa90245e775"
+  action={async (contract) => {
+    try {
+      await contract.call("burnAndClaim", [nft.metadata.id, 1]);
+      // Display success toast when the recycling action completes
+      toast.success("Recycling successful!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 5000, // Set the duration in milliseconds (e.g., 3000ms = 3 seconds)
+      });
+    } catch (error) {
+      // Handle error here if the recycling action fails
+      console.error("Recycling failed:", error);
+      toast.error("Recycling failed. Please try again.", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 5000, // Set the duration in milliseconds for the error toast
+      });
+    }
+  }}
+>
+  RECYCLE
+</Web3Button>
                 
               </div>
             ))}

@@ -22,25 +22,8 @@ const Mint: NextPage = () => {
   const [mintStatus, setMintStatus] = useState<string>('');
 
   const handleMint = async () => {
-    try {
-      const provider = new ethers.providers.Web3Provider(window.ethereum, 'any');
-      await provider.send('eth_requestAccounts', []);
-      const signer = provider.getSigner();
-      const diamond = await Diamond.create(signer, 'clq7jmq2q0001ii7edvamkdyt');
-
-      const recipient = await signer.getAddress();
-      const price = await diamond?.apps?.drop?.price();
-
-      const tx = await diamond?.apps?.drop?.mintTo(recipient, 1, {
-        value: price,
-      });
-      await tx?.wait();
-
-      setMintStatus('Success!');
-    } catch (error) {
-      console.error('Error while minting:', error);
-      setMintStatus('Failed!');
-    }
+    const websiteUrl = 'https://app.niftykit.com/collections/bots-of-cog-cmyk-series';
+    window.open(websiteUrl, '_self');
   };
 
   return (

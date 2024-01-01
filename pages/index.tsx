@@ -23,9 +23,9 @@ const Home: NextPage = () => {
           >
             {/* MINT */}
             <Image src="/icons/cmyk.webp" alt="mintcmyk" width={64} height={64} />
-            <h2 className={styles.selectBoxTitle}>CMYK MINT <br></br>[ OFFLINE ]</h2>
+            <h2 className={styles.selectBoxTitle}>CMYK MINT <br></br>[ ONLINE ]</h2>
             <p className={styles.selectBoxDescription}>
-            {"This Mint Page Will Go LIVE @ 12/31/23 - 11:59PM (MST-7)"}
+            {"This Mint Page LIVE @ 12/31/23 - 11:59PM (MST-7)"}
             {/* <p>FUN TIME PALS; 64 Limted Edition Worker Bots, Unique to COG.</p> */}
             </p>
         </div>
