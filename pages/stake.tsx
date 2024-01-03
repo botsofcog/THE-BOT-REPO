@@ -200,7 +200,7 @@ const Stake: NextPage = () => {
         <>
 
           <div className={styles.tokenGrid}>
-           <div className={styles.tokenItem}>
+{/*            <div className={styles.tokenItem}>
               <h3 className={styles.tokenLabel}>OLD EARNED COGz:</h3>
               <p className={styles.tokenValue}>
                 <b>
@@ -210,22 +210,22 @@ const Stake: NextPage = () => {
                 </b>{" "}
                 {tokenBalance?.symbol}
               </p>
-            </div>
+            </div> */}
 
             <div className={styles.tokenItem}>
-              <h3 className={styles.tokenLabel}>YOUR -New- $COGz  BALANCE:</h3>
+              <h3 className={styles.tokenLabel}>YOUR $COGz  BALANCE:</h3>
               <p className={styles.tokenValue}>
                 <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
               </p>
             </div>
           </div>
-
+{/* 
 <Web3Button
             action={() => claimRewards()}
             contractAddress={stakingContractAddress}
           >
             Claim Remaining COGz
-          </Web3Button>
+          </Web3Button> */}
 
 {/* <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>YOUR GEN1 REPOSITORY</h2>
