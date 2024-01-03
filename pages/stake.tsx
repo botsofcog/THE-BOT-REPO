@@ -227,7 +227,7 @@ const Stake: NextPage = () => {
             Claim Remaining COGz
           </Web3Button> */}
 
-{/*           <hr className={`${styles.divider} ${styles.spacerTop}`} />
+<hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>YOUR GEN1 REPOSITORY</h2>
           <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel}>
@@ -237,10 +237,10 @@ const Stake: NextPage = () => {
                 <span className={styles.blueText}></span>
               )}
             </h3>
-          </div> */}
+          </div>
 
 
-          {/* <div className={styles.nftBoxGrid}>
+<div className={styles.nftBoxGrid}>
             {stakedTokens &&
               stakedTokens[0]?.map((stakedToken: BigNumber) => (
                 <NFTCard
@@ -249,7 +249,7 @@ const Stake: NextPage = () => {
                 />
               ))}
           </div>
-
+          {/* 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>GEN1 BOTS IN WALLET</h2>
           <Web3Button
