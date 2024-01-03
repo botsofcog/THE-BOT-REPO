@@ -198,10 +198,10 @@ const Stake: NextPage = () => {
         <ConnectWallet />
       ) : (
         <>
-          {/* <h2>YOUR COGz COIN</h2> */}
+
           <div className={styles.tokenGrid}>
-            {/* <div className={styles.tokenItem}>
-              <h3 className={styles.tokenLabel}>EARNED COGz:</h3>
+           <div className={styles.tokenItem}>
+              <h3 className={styles.tokenLabel}>OLD EARNED COGz:</h3>
               <p className={styles.tokenValue}>
                 <b>
                   {!claimableRewards
@@ -211,23 +211,23 @@ const Stake: NextPage = () => {
                 {tokenBalance?.symbol}
               </p>
             </div>
- */}
+
             <div className={styles.tokenItem}>
-              <h3 className={styles.tokenLabel}>YOUR  $COGz  BALANCE:</h3>
+              <h3 className={styles.tokenLabel}>YOUR -New- $COGz  BALANCE:</h3>
               <p className={styles.tokenValue}>
                 <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
               </p>
             </div>
           </div>
 
-{/*           <Web3Button
+<Web3Button
             action={() => claimRewards()}
             contractAddress={stakingContractAddress}
           >
             Claim Remaining COGz
-          </Web3Button> */}
+          </Web3Button>
 
-<hr className={`${styles.divider} ${styles.spacerTop}`} />
+{/* <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>YOUR GEN1 REPOSITORY</h2>
           <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel}>
@@ -248,7 +248,7 @@ const Stake: NextPage = () => {
                   key={stakedToken.toString()}
                 />
               ))}
-          </div>
+          </div> */}
           {/* 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>GEN1 BOTS IN WALLET</h2>
