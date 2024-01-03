@@ -30,6 +30,7 @@ const NFTCard: FC<NFTCardProps> = ({ tokenId }) => {
             />
           )}
           <h3>{nft.metadata.name}</h3>
+
           <Web3Button
       contractAddress="0x6D067520526807E7A61BAC740E6D66BB62d05332"
       action={(contract) => {
@@ -38,6 +39,7 @@ const NFTCard: FC<NFTCardProps> = ({ tokenId }) => {
     >
       Download to ACCOUNT
     </Web3Button>
+
         </div>
       )}
     </>
