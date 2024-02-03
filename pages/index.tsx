@@ -23,9 +23,9 @@ const Home: NextPage = () => {
           >
             {/* MINT */}
             <Image src="/icons/cmyk.webp" alt="mintcmyk" width={64} height={64} />
-            <h2 className={styles.selectBoxTitle}>CMYK MINT <br></br>[ ONLINE ]</h2>
+            <h2 className={styles.selectBoxTitle}>CMYK MINT <br></br>[ CLOSED ]</h2>
             <p className={styles.selectBoxDescription}>
-            {"This Mint Page LIVE @ 12/31/23 - 11:59PM (MST-7)"}
+            {"Burn To Exchange Phase Is LIVE. Send A Pal in to Redeem A New One."}
             {/* <p>FUN TIME PALS; 64 Limted Edition Worker Bots, Unique to COG.</p> */}
             </p>
         </div>
@@ -104,7 +104,7 @@ const Home: NextPage = () => {
         <div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => window.open('https://withkoji.com/@botsofcog', '_self')}
+          onClick={() => window.open('https://botsofcog.io/links/', '_self')}
         >
           {/* LINKS */}
           <Image src="/icons/extra.webp" alt="links" width={64} height={64} />
@@ -119,7 +119,6 @@ const Home: NextPage = () => {
         <br />
         <a href="https://twitter.com/botsofcog">- BoC Twitter -</a>
         <br></br>
-        <a href="https://withkoji.com/@botsofcog">- Link Hub -</a>
       </p>
     </div>
   );
